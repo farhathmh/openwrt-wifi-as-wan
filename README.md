@@ -13,6 +13,31 @@ a second-hand router, and OpenWrt.**
 
 ---
 
+## Quick Controls
+
+| Jump | Purpose |
+|------|---------|
+| [Scenario](#the-scenario) | Understand the real-world constraint |
+| [Hardware](#the-hardware-decision) | See why AX23 v1 was selected |
+| [Problem](#the-network-problem) | Review rejected options |
+| [Solution](#the-solution) | Follow the implementation path |
+| [Outcome](#what-this-enabled) | Validate what changed |
+| [Lessons](#what-i-learned) | Capture repeatable insights |
+
+---
+
+## Build Dashboard
+
+| Signal | Status |
+|--------|--------|
+| Project State | ![State](https://img.shields.io/badge/State-Operational-0A9396?style=flat-square) |
+| Router | ![Router](https://img.shields.io/badge/AX23-v1-E57000?style=flat-square) |
+| Firmware | ![Firmware](https://img.shields.io/badge/OpenWrt-Stable-00B5E2?style=flat-square&logo=openwrt&logoColor=white) |
+| WAN Mode | ![WAN](https://img.shields.io/badge/WAN-WiFi_Client-1D3557?style=flat-square) |
+| LAN Mode | ![LAN](https://img.shields.io/badge/LAN-Wired_Distribution-457B9D?style=flat-square) |
+
+---
+
 ## The Scenario
 
 I live and work in Dubai as a Field IT Support Engineer. After months of
@@ -68,6 +93,15 @@ downstream devices.
 | Buy a managed switch | Extra cost, doesn't solve the WAN source problem |
 | Run a separate router | Needed the right hardware and firmware to support WiFi as WAN |
 
+<details>
+<summary><strong>Decision notes</strong></summary>
+
+- Primary filter was reliability over convenience.
+- Solutions dependent on USB dongles were deprioritized due to interface limits.
+- Router-level routing provided cleaner troubleshooting than host-level NAT.
+
+</details>
+
 ---
 
 ## The Solution
@@ -107,6 +141,21 @@ exactly what was needed.
 | wlan1 (2.4GHz) | Broadcast — personal WiFi network for wireless device access |
 | eth0-3 (LAN ports) | Wired LAN — all homelab devices connected here |
 
+<details>
+<summary><strong>Topology preview</strong></summary>
+
+```text
+Shared Apartment WiFi (upstream)
+            |
+        wlan0 (5GHz)
+        TP-Link AX23
+      /      |      \
+ wlan1   LAN ports   LuCI
+ 2.4GHz   eth0-3   management
+```
+
+</details>
+
 ---
 
 ## Unexpected Benefits
@@ -142,6 +191,16 @@ With this solution in place, the entire homelab became fully operational:
 - Full internet access across all devices from a single shared WiFi source
 - Clean network topology with a proper router handling all routing,
   DNS, DHCP, and firewall
+
+<details>
+<summary><strong>Operational checks</strong></summary>
+
+- Verify internet reachability from at least one wired host.
+- Verify DHCP lease allocation to wired and wireless clients.
+- Verify DNS resolution through router for both networks.
+- Verify firewall defaults and outbound connectivity.
+
+</details>
 
 ---
 
