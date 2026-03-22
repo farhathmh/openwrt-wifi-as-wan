@@ -15,6 +15,9 @@ a second-hand router, and OpenWrt.**
 
 ## Quick Controls
 
+<details>
+<summary><strong>Open quick navigation</strong></summary>
+
 | Jump | Purpose |
 |------|---------|
 | [Scenario](#the-scenario) | Understand the real-world constraint |
@@ -23,6 +26,8 @@ a second-hand router, and OpenWrt.**
 | [Solution](#the-solution) | Follow the implementation path |
 | [Outcome](#what-this-enabled) | Validate what changed |
 | [Lessons](#what-i-learned) | Capture repeatable insights |
+
+</details>
 
 ---
 
