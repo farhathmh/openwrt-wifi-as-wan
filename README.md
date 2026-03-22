@@ -5,7 +5,7 @@
 **Building homelab connectivity from scratch with no owned infrastructure,
 a second-hand router, and OpenWrt.**
 
-![Status](https://img.shields.io/badge/Status-Complete-00B4D8?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In_Progress-E57000?style=for-the-badge)
 ![OpenWrt](https://img.shields.io/badge/OpenWrt-00B5E2?style=for-the-badge&logo=openwrt&logoColor=white)
 ![Networking](https://img.shields.io/badge/Networking-VLANs%20%7C%20DNS%20%7C%20DHCP-00B4D8?style=for-the-badge)
 

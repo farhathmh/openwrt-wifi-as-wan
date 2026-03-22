@@ -1,4 +1,5 @@
-# OpenWrt Setup — Step by Step
+# OpenWrt Setup — Step by Step 
+![Status](https://img.shields.io/badge/Status-In_Progress-E57000?style=for-the-badge)
 
 > Full configuration walkthrough coming soon.
 > This document will cover the complete OpenWrt installation and
