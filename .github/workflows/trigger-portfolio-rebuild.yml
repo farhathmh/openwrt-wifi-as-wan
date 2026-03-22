@@ -1,0 +1,20 @@
+name: Trigger Portfolio Rebuild
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+      - docs/**
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch portfolio rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PORTFOLIO_REBUILD_TOKEN }}
+          repository: farhathmh/farhathmh.github.io
+          event-type: openwrt-case-updated
