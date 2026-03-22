@@ -1,0 +1,9 @@
+# Windows shell metadata injected by Google Drive / Explorer
+**/desktop.ini
+**/Desktop.ini
+
+# Also suppress other common Windows/sync noise
+**/Thumbs.db
+**/ehthumbs.db
+**/$RECYCLE.BIN/
+**/$RECYCLE.BIN
